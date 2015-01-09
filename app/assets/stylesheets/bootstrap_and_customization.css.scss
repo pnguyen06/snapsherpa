@@ -6,3 +6,13 @@ $body-bg: #F5F5F5;
 .center {
 	text-align: center;
 }
+
+.btn {
+  border-radius: 50px;
+  //background: none;
+  border: 1px solid;
+}
+
+.btn:hover {
+  //background-color: #f1f1f1;
+}

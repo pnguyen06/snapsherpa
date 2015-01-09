@@ -11,7 +11,11 @@ gem 'turbolinks' # Turbolinks makes following links in your web application fast
 gem 'jbuilder', '~> 1.2' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'bootstrap-sass'
 gem 'paperclip', '~> 3.0'
-
+gem 'aws-sdk', '~> 1.33.0'
+gem 'font-awesome-rails', '~> 4.2.0'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
+gem 'has_scope'
 
 group :development, :test do
 	gem 'sqlite3' # Use sqlite3 as the database for Active Record

@@ -1,43 +1,59 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
-
-  <%= image_tag @brand.image.url(:medium) %>
-
-  <p>
-    <strong>Name:</strong>
-    <%= @brand.name %>
-  </p>
-
-  <p>
-    <strong>Username:</strong>
-    <%= @brand.username %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @brand.description %>
-  </p>
-
-  <p>
-    <strong>Website:</strong>
-    <%= @brand.website %>
-  </p>
-
-  <p>
-    <strong>Facebook:</strong>
-    <%= @brand.facebook %>
-  </p>
-
-  <p>
-    <strong>Twitter:</strong>
-    <%= @brand.twitter %>
-  </p>
-
-  <p>
-    <strong>Instagram:</strong>
-    <%= @brand.instagram %>
-  </p>
-
   <%= link_to 'Edit', edit_brand_path(@brand) %> |
   <%= link_to 'Back', brands_path %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-2 center">
+              <%= image_tag @brand.image.url(:medium), :size => "150x150", :class => "img-thumbnail" %>
+            </div>
+            <div class="col-md-10">
+              <h2><%= @brand.name %>&nbsp;<small><%= @brand.username %></small></h2>
+              <%= @brand.description %>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-4">
+              <%= @brand.industry %>
+            </div>
+            <div class="col-md-8" style="text-align: right;">
+              <%= link_to @brand.website, "http://#{@brand.website}", :class => "link-grey" %>
+              <% if @brand.facebook.present? %>
+                <%= link_to "http://#{@brand.facebook}" do %>
+                  <i class="fa fa-facebook fa-lg fa-fw link-grey"></i>
+                <% end %>
+              <% end %>
+              <% if @brand.twitter.present? %>
+                <%= link_to "http://#{@brand.twitter}" do %>
+                  <i class="fa fa-twitter fa-lg fa-fw link-grey"></i>
+                <% end %>
+              <% end %>
+              <% if @brand.instagram.present? %>
+                <%= link_to "http://#{@brand.instagram}" do %>
+                  <i class="fa fa-instagram fa-lg fa-fw link-grey"></i>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4>Momentum</h4>
+      To Come
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4>History</h4>
+      <%= @brand.history %>
+    </div>
+  </div>
 </div>
