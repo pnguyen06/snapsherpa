@@ -1,39 +1,43 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @brand.name %>
-</p>
+  <%= image_tag @brand.image.url(:medium) %>
 
-<p>
-  <strong>Username:</strong>
-  <%= @brand.username %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @brand.name %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @brand.description %>
-</p>
+  <p>
+    <strong>Username:</strong>
+    <%= @brand.username %>
+  </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @brand.website %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @brand.description %>
+  </p>
 
-<p>
-  <strong>Facebook:</strong>
-  <%= @brand.facebook %>
-</p>
+  <p>
+    <strong>Website:</strong>
+    <%= @brand.website %>
+  </p>
 
-<p>
-  <strong>Twitter:</strong>
-  <%= @brand.twitter %>
-</p>
+  <p>
+    <strong>Facebook:</strong>
+    <%= @brand.facebook %>
+  </p>
 
-<p>
-  <strong>Instagram:</strong>
-  <%= @brand.instagram %>
-</p>
+  <p>
+    <strong>Twitter:</strong>
+    <%= @brand.twitter %>
+  </p>
 
-<%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %>
+  <p>
+    <strong>Instagram:</strong>
+    <%= @brand.instagram %>
+  </p>
+
+  <%= link_to 'Edit', edit_brand_path(@brand) %> |
+  <%= link_to 'Back', brands_path %>
+</div>
