@@ -1,0 +1,45 @@
+<%= form_for(@brand) do |f| %>
+  <% if @brand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+
+      <ul>
+      <% @brand.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :username %><br>
+    <%= f.text_field :username, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :website %><br>
+    <%= f.text_field :website, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :facebook %><br>
+    <%= f.text_field :facebook, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :twitter %><br>
+    <%= f.text_field :twitter, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :instagram %><br>
+    <%= f.text_field :instagram, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

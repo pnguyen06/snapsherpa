@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @brand.name %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @brand.username %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @brand.description %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @brand.website %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @brand.facebook %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @brand.twitter %>
+</p>
+
+<p>
+  <strong>Instagram:</strong>
+  <%= @brand.instagram %>
+</p>
+
+<%= link_to 'Edit', edit_brand_path(@brand) %> |
+<%= link_to 'Back', brands_path %>
