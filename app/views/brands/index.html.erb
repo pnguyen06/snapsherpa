@@ -1,25 +1,43 @@
+<%= javascript_include_tag "sortable" %>
+
 <div class="container">
   <%= link_to 'New Brand', new_brand_path %>
   <br /><br />
   <div style="background-color: #fff;">
+    <div id="the-basics">
+      <input class="typeahead" type="text" placeholder="States of USA">
+    </div>
+    <br />
     <%= form_tag brands_path, :method => 'get' do %>
       <p>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search", :name => nil, :class => "btn btn-primary"  %>
+        <%= text_field_tag :search, params[:search], :placeholder => "Explore by brand name", :class => "form-control typeahead" %>
+        <!--<%= submit_tag "Search", :name => nil, :class => "btn btn-default btn-xs"  %>-->
       </p>
     <% end %>
+
+    <div class="dropdown">
+      <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+        Industry
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="/brands">All</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="?industry=Clothing">Clothing</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="?industry=Restaurants">Restaurants</a></li>
+      </ul>
+    </div>
   </div>
+  <br />
   <div style="background-color: #fff;">
     <div class="table-responsive">
       <table class="table table-hover table-condensed sortable-theme-bootstrap" id="brand-table" data-sortable>
-        <col width="50">
         <thead>
           <tr>
-            <th data-sortable="false"></th>
             <th style="text-align: left;">Company</th>
-            <th>Momentum</th>
+            <th>Username</th>
+            <th>Momentum<br />Score</th>
             <th>Industry</th>
-            <th data-sortable="false">Social Media Presence</th>
+            <th data-sortable="false">Social Media<br />Presence</th>
             <th>Website</th>
           </tr>
         </thead>
@@ -27,12 +45,16 @@
           <% @brands.each do |brand| %>
             <tr>
               <td>
-                <%= link_to image_tag(brand.image.url(:thumb), :size => "50x50", :class => "img-rounded"), brand %>
+                <div class="row">
+                  <div class="col-md-2">
+                    <%= link_to image_tag(brand.image.url(:thumb), :size => "40x40", :class => "img-rounded"), brand %>
+                  </div>
+                  <div class="col-md-10" style="text-align: left;">
+                    <h4><%= link_to brand.name, brand,  :class => "link-grey" %></h4>
+                  </div>
+                </div>
               </td>
-              <td style="text-align: left;">
-                <h4><%= link_to brand.name, brand,  :class => "link-grey" %></h4>
-                <p style="margin-top: -10px; font-style: italic;"><small><%= brand.username %></small></p>
-              </td>
+              <td><%= brand.username %></td>
               <td><%= brand.momentum %></td>
               <td><%= brand.industry %></td>
               <td>
@@ -62,6 +84,49 @@
 </div>
 
 <script>
-/*! sortable.js 0.6.0 */
-(function(){var a,b,c,d,e,f,g;a="table[data-sortable]",d=/^-?[£$¤]?[\d,.]+%?$/,g=/^\s+|\s+$/g,f="ontouchstart"in document.documentElement,c=f?"touchstart":"click",b=function(a,b,c){return null!=a.addEventListener?a.addEventListener(b,c,!1):a.attachEvent("on"+b,c)},e={init:function(b){var c,d,f,g,h;for(null==b&&(b={}),null==b.selector&&(b.selector=a),d=document.querySelectorAll(b.selector),h=[],f=0,g=d.length;g>f;f++)c=d[f],h.push(e.initTable(c));return h},initTable:function(a){var b,c,d,f,g,h;if(1===(null!=(h=a.tHead)?h.rows.length:void 0)&&"true"!==a.getAttribute("data-sortable-initialized")){for(a.setAttribute("data-sortable-initialized","true"),d=a.querySelectorAll("th"),b=f=0,g=d.length;g>f;b=++f)c=d[b],"false"!==c.getAttribute("data-sortable")&&e.setupClickableTH(a,c,b);return a}},setupClickableTH:function(a,d,f){var g;return g=e.getColumnType(a,f),b(d,c,function(){var b,c,h,i,j,k,l,m,n,o,p,q,r,s,t,u;for(j="true"===this.getAttribute("data-sorted"),k=this.getAttribute("data-sorted-direction"),b=j?"ascending"===k?"descending":"ascending":g.defaultSortDirection,m=this.parentNode.querySelectorAll("th"),n=0,q=m.length;q>n;n++)d=m[n],d.setAttribute("data-sorted","false"),d.removeAttribute("data-sorted-direction");for(this.setAttribute("data-sorted","true"),this.setAttribute("data-sorted-direction",b),l=a.tBodies[0],h=[],t=l.rows,o=0,r=t.length;r>o;o++)c=t[o],h.push([e.getNodeValue(c.cells[f]),c]);for(j?h.reverse():h.sort(g.compare),u=[],p=0,s=h.length;s>p;p++)i=h[p],u.push(l.appendChild(i[1]));return u})},getColumnType:function(a,b){var c,f,g,h,i;for(i=a.tBodies[0].rows,g=0,h=i.length;h>g;g++)if(c=i[g],f=e.getNodeValue(c.cells[b]),""!==f){if(f.match(d))return e.types.numeric;if(!isNaN(Date.parse(f)))return e.types.date}return e.types.alpha},getNodeValue:function(a){return a?null!==a.getAttribute("data-value")?a.getAttribute("data-value"):"undefined"!=typeof a.innerText?a.innerText.replace(g,""):a.textContent.replace(g,""):""},types:{numeric:{defaultSortDirection:"descending",compare:function(a,b){var c,d;return c=parseFloat(a[0].replace(/[^0-9.-]/g,""),10),d=parseFloat(b[0].replace(/[^0-9.-]/g,""),10),isNaN(c)&&(c=0),isNaN(d)&&(d=0),d-c}},alpha:{defaultSortDirection:"ascending",compare:function(a,b){return a[0].localeCompare(b[0])}},date:{defaultSortDirection:"ascending",compare:function(a,b){var c,d;return c=Date.parse(a[0]),d=Date.parse(b[0]),isNaN(c)&&(c=0),isNaN(d)&&(d=0),c-d}}}},setTimeout(e.init,0),window.Sortable=e}).call(this);
+  var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substrRegex;
+ 
+    // an array that will be populated with substring matches
+    matches = [];
+ 
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+ 
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        // the typeahead jQuery plugin expects suggestions to a
+        // JavaScript object, refer to typeahead docs for more info
+        matches.push({ value: str });
+      }
+    });
+ 
+    cb(matches);
+  };
+};
+ 
+var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+];
+ 
+$('#the-basics .typeahead').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 2
+},
+{
+  name: 'states',
+  displayKey: 'value',
+  source: substringMatcher(states)
+});
 </script>

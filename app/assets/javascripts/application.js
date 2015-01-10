@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require sortable
+//= require sortable.min
+//= require bootstrap-typeahead-rails
 //= require_tree .

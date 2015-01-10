@@ -16,6 +16,7 @@ gem 'font-awesome-rails', '~> 4.2.0'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'has_scope'
+gem 'bootstrap-typeahead-rails'
 
 group :development, :test do
 	gem 'sqlite3' # Use sqlite3 as the database for Active Record

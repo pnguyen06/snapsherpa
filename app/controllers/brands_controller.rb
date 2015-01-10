@@ -48,4 +48,9 @@ class BrandsController < ApplicationController
     def brand_params
       params.require(:brand).permit(:name, :username, :momentum, :description, :industry, :website, :facebook, :twitter, :instagram, :history, :image)
     end
+
+    def load_suggestions
+      @suggestions = Brand.select(:name)
+      render json: @suggestions
+    end
 end
