@@ -11,5 +11,6 @@
  *= require_self
  *= require font-awesome
  *= require bootstrap-typeahead-rails
+ *= require sortable-theme-bootstrap
  *= require_tree .
  */

@@ -1,20 +1,18 @@
 <%= javascript_include_tag "sortable" %>
+<%= stylesheet_link_tag "sortable-theme-bootstrap" %>
 
 <div class="container">
   <%= link_to 'New Brand', new_brand_path %>
   <br /><br />
   <div style="background-color: #fff;">
     <div id="the-basics">
-      <input class="typeahead" type="text" placeholder="States of USA">
+      <%= form_tag brands_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search], :placeholder => "Explore by brand name", :class => "form-control typeahead" %>
+          <%= submit_tag "Search", :name => nil, :class => "btn btn-default btn-xs"  %>
+        </p>
+      <% end %>
     </div>
-    <br />
-    <%= form_tag brands_path, :method => 'get' do %>
-      <p>
-        <%= text_field_tag :search, params[:search], :placeholder => "Explore by brand name", :class => "form-control typeahead" %>
-        <!--<%= submit_tag "Search", :name => nil, :class => "btn btn-default btn-xs"  %>-->
-      </p>
-    <% end %>
-
     <div class="dropdown">
       <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
         Industry
@@ -108,15 +106,7 @@
   };
 };
  
-var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+var states = ["Taco Bell", "McDonald's", "American Apparel"
 ];
  
 $('#the-basics .typeahead').typeahead({
