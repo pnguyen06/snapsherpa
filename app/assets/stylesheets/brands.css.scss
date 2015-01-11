@@ -12,3 +12,13 @@
 		text-align: left;
 	}
 }
+
+.btn-filter {
+  border-radius: 50px;
+  //background: none;
+  border: none;
+}
+
+.btn-filter:hover, .btn-filter:active, .btn-filter:visited {
+  background-color: #fff !important;
+}

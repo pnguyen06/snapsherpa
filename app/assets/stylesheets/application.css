@@ -12,5 +12,6 @@
  *= require font-awesome
  *= require bootstrap-typeahead-rails
  *= require sortable-theme-bootstrap
+ *= require typeaheadjs
  *= require_tree .
  */
