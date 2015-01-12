@@ -11,7 +11,7 @@
               <%= image_tag @brand.image.url(:medium), :size => "150x150", :class => "img-thumbnail" %>
             </div>
             <div class="col-md-10">
-              <h2><%= @brand.name %>&nbsp;<small><%= @brand.username %></small></h2>
+              <h2><%= @brand.name %>&nbsp;<small>@<%= @brand.username %></small></h2>
               <%= @brand.description %>
             </div>
           </div>
@@ -19,7 +19,7 @@
         <div class="panel-footer">
           <div class="row">
             <div class="col-md-4">
-              <%= @brand.industry %>
+              <%= link_to @brand.industry, "/brands?Industry=#{@brand.industry}", :class => "link-grey" %>
             </div>
             <div class="col-md-8" style="text-align: right;">
               <%= link_to @brand.website, "http://#{@brand.website}", :class => "link-grey" %>
@@ -44,12 +44,12 @@
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
+  <!--<div class="panel panel-default">
     <div class="panel-body">
       <h4>Momentum</h4>
       To Come
     </div>
-  </div>
+  </div>-->
   <div class="panel panel-default">
     <div class="panel-body">
       <h4>History</h4>
