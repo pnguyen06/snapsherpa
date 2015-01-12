@@ -1,4 +1,3 @@
-var ready = function(){
   var substringMatcher = function(strs) {
   return function findMatches(q, cb) {
     var matches, substrRegex;
@@ -36,6 +35,3 @@ $('#the-basics .typeahead').typeahead({
   displayKey: 'value',
   source: substringMatcher(states)
 });
-});
-
-$(document).on("page:load ready", ready);
