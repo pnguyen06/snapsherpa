@@ -11,11 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
+//= require jquery.turbolinks.js
 //= require jquery_ujs
 //= require bootstrap
 //= require sortable
-//= require sortable.min
+//= require sortable.min.js
 //= require bootstrap-typeahead-rails
 //= require turbolinks
 //= require_tree .
