@@ -28,7 +28,7 @@ var states = ["16 Handles",  "Acura", "Alex and Ani", "Amazon", "American Appare
 $('#the-basics .typeahead').typeahead({
   hint: true,
   highlight: true,
-  minLength: 2
+  minLength: 1
 },
 {
   name: 'states',
