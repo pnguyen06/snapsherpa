@@ -3,7 +3,7 @@ class BrandsController < ApplicationController
   has_scope :industry
 
   def index
-    @brands = apply_scopes(Brand.all.order(':momentum DESC').search(params[:search]))
+    @brands = apply_scopes(Brand.all.order('momentum DESC, name').search(params[:search]))
   end
 
   def show
