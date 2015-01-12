@@ -1,0 +1,31 @@
+ _   _   _   _    _       _  _   _   _
+|_  | | |_| |_|  |_  |_| |_ |_| |_| |_|
+ _| | | | | |     _| | | |_ | \ |   | |
+
+
+CREATED IN 2015.
+============================================================================
+
+This creation.txt file explains the team and graphic assets behind the site.
+
+PEOPLE
+============================================================================
+
+This site was hand-crafted by Phil Nguyen.
+
+
+
+GRAPHIC ASSETS
+============================================================================
+
+Backpack (icon)
+Joe Harrison
+http://thenounproject.com/term/backpack/16138/
+
+Landing Photo (photo)
+Sylwia Bartyzel
+https://unsplash.com/sylwiabartyzel
+
+Database Photo (photo)
+Rene Reichelt
+https://unsplash.com/kaarl

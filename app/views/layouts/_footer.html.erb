@@ -1,0 +1,42 @@
+<div class="footer"> 
+	<div class="container">
+		<strong><a id="submitnew" data-toggle="popover" class="link-grey" style="cursor: pointer;">+ ADD DATA</a></strong>
+
+		<div id="popover_content_wrapper" style="display: none">
+  		<div>Have data to add? Am I missing your brand? Please tweet me at <a href="http://www.twitter.com/p_ngu" class="link-grey">@p_ngu</a></div>
+		</div>
+
+		 &nbsp; &nbsp;
+		<%= link_to "ABOUT", about_path, :class => "link-grey" %> &nbsp; &nbsp;
+		<div style="float:right">
+			&copy; 2015 WATER COOLER LABS
+		</div>
+	</div>
+</div>
+
+<script>
+
+$('a#submitnew').click(function() {
+  $('a#submitnew').popover({
+    html: true,
+    trigger: 'manual',
+    placement: 'top',
+    content: function() {
+    	return $('#popover_content_wrapper').html();
+    },
+    title: 'Submit New Data'
+  });
+  $('a#submitnew').popover("show");
+});
+
+$('body').on('click', function (e) {
+  $('[data-toggle="popover"]').each(function () {
+  	//the 'is' for buttons that trigger popups
+  	//the 'has' for icons within a button that triggers a popup
+    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+            $(this).popover('hide');
+    }
+  });
+});
+
+</script>

@@ -28,3 +28,34 @@ $body-bg: #F5F5F5;
 .panel-footer {
 	background-color: #EEEEEE;
 }
+
+/* Sticky footer styles */
+
+* {
+	margin: 0;
+}
+
+html, body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -110px;
+}
+
+/* Set the fixed height of the footer here */
+.push,
+.footer {
+  margin-top: 60px;
+  height: 50px;
+}
+.footer {
+  //background-color: #ecf0f1;
+  font-size: 10px;
+}

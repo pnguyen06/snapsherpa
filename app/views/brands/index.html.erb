@@ -1,12 +1,16 @@
 <%= stylesheet_link_tag "sortable-theme-bootstrap" %>
-<div class="brands_jumbo">
+<div class="add_button">
+  <%= link_to new_brand_path do %>
+    <i class="fa fa-plus-circle fa-2x link-grey"></i>
+  <% end %>
+</div>
+
+<div class="brands_jumbo" style="margin-bottom: 30px;">
   <div class="container">
-    
+    <h1>LET'S DISCOVER</h1>
   </div>
 </div>
 <div class="container">
-  <%= link_to 'New Brand', new_brand_path %>
-  <br /><br />
   <div style="background-color: #fff;">
     <div id="the-basics">
       <%= form_tag brands_path, :method => 'get' do %>
