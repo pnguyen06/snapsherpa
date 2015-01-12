@@ -11,6 +11,16 @@
 		        </p>
 		      <% end %>
 		    </div>
+		    <div>
+		    	<select onchange="location = this.options[this.selectedIndex].value;" class="form-control">
+					  <option value="" disabled selected>or seek by popular categories</option>
+					  <option value="/brands?industry=Sports">Sports</option>
+					  <option value="/brands?industry=Fashion">Fashion</option>
+					  <option value="/brands?industry=Restaurant">Restaurant</option>
+					  <option value="/brands?industry=Food and Beverage">Food and Beverage</option>
+					  <option value="/brands?industry=Music">Music</option>
+					</select>
+		    </div>
 		  </div>
 		</div>
 	</div>
