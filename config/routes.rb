@@ -1,4 +1,5 @@
 Snapsherpa::Application.routes.draw do
+  devise_for :users
   resources :brands
 
   root "pages#home"

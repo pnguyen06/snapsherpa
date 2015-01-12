@@ -30,6 +30,7 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
+    bcrypt (3.1.7)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     bootstrap-typeahead-rails (0.10.5.1)
@@ -46,6 +47,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    devise (3.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.2)
     font-awesome-rails (4.2.0.0)
@@ -72,6 +79,7 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
+    orm_adapter (0.5.0)
     paperclip (3.5.2)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -135,6 +143,8 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     uuidtools (2.1.4)
+    warden (1.2.3)
+      rack (>= 1.0)
     will_paginate (3.0.5)
     will_paginate-bootstrap (1.0.0)
       will_paginate (>= 3.0.3)
@@ -147,6 +157,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap-typeahead-rails
   coffee-rails (~> 4.0.0)
+  devise
   font-awesome-rails (~> 4.2.0)
   has_scope
   jbuilder (~> 1.2)

@@ -88,4 +88,7 @@ Snapsherpa::Application.configure do
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   } 
+
+  # Devise
+  config.action_mailer.default_url_options = { :host => 'https://morning-springs-3556.herokuapp.com/' }
 end
