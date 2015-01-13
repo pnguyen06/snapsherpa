@@ -1,6 +1,6 @@
 class BrandsController < ApplicationController
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: []
+  before_action :authenticate_user!, except: [:index, :show]
   has_scope :industry
 
   def index

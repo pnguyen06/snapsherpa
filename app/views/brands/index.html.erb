@@ -1,9 +1,11 @@
 <%= stylesheet_link_tag "sortable-theme-bootstrap" %>
-<div class="add_button">
-  <%= link_to new_brand_path do %>
-    <i class="fa fa-plus-circle fa-2x link-grey"></i>
-  <% end %>
-</div>
+<% if user_signed_in? %>
+  <div class="add_button">
+    <%= link_to new_brand_path do %>
+      <i class="fa fa-plus-circle fa-2x link-grey"></i>
+    <% end %>
+  </div>
+<% end %>
 
 <div class="brands_jumbo" style="margin-bottom: 30px;">
   <div class="container">
