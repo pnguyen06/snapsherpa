@@ -12,9 +12,9 @@
 	<body>
 		<div class="wrapper">
 			<%= render 'layouts/header' %>
-			<% flash.each do |name, msg| %>
+			<div class="container"><% flash.each do |name, msg| %>
      		<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-			<% end %>
+			<% end %></div>
 			<%= yield %>
 			<div class="push"></div>
 		</div>
