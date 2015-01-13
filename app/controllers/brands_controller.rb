@@ -1,7 +1,7 @@
 class BrandsController < ApplicationController
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  has_scope :industry
+  has_scope :industry, :deals, :previews
 
   def index
     @brands = apply_scopes(Brand.all.order('momentum DESC, name').search(params[:search]))
@@ -47,7 +47,7 @@ class BrandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params.require(:brand).permit(:name, :username, :momentum, :description, :industry, :website, :facebook, :twitter, :instagram, :history, :image)
+      params.require(:brand).permit(:name, :username, :momentum, :description, :industry, :website, :facebook, :twitter, :instagram, :history, :deals, :previews, :image)
     end
 
     def load_suggestions

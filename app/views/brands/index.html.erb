@@ -40,6 +40,17 @@
           <li role="presentation"><a role="menuitem" tabindex="-1" href="?industry=Other">Other</a></li>
         </ul>
       </div>
+      <div class="dropdown">
+        <button class="btn-filter btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+          Content
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/brands">All</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="?deals=true">Deals</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="?previews=true">Previews</a></li>
+        </ul>
+      </div>
     </div>
   </div>
   <br />
@@ -51,6 +62,8 @@
             <th style="text-align: left;">Company</th>
             <th>Username</th>
             <th>Momentum</th>
+            <th>Deals</th>
+            <th>Previews</th>
             <th>Industry</th>
             <th data-sortable="false">Web Presence</th>
           </tr>
@@ -70,6 +83,8 @@
               </td>
               <td><%= brand.username %></td>
               <td><%= brand.momentum %></td>
+              <td><% if brand.deals? %><span class="fa fa-check-circle"></span><% end %></td>
+              <td><% if brand.previews? %><span class="fa fa-check-circle"></span><% end %></td>
               <td><%= brand.industry %></td>
               <td>
                 <% if brand.website.present? %>

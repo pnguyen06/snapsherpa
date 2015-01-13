@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150112225524) do
+ActiveRecord::Schema.define(version: 20150113035942) do
 
   create_table "brands", force: true do |t|
     t.string   "name"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20150112225524) do
     t.string   "industry"
     t.text     "history"
     t.integer  "momentum"
+    t.boolean  "deals"
+    t.boolean  "previews"
   end
 
   create_table "users", force: true do |t|
