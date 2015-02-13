@@ -1,0 +1,15 @@
+<div class="container">
+	<h1>Edit Products</h1>
+	<%= form_tag update_individual_brands_path, :method => :put do %>
+		<% for brand in @brands %>
+			<%= fields_for "brands[]", brand do |f| %>
+				<h2><%= brand.name %></h2>
+				<div class="form-group">
+    			<%= f.label :momentum %>
+    			<%= f.text_field :momentum, class: "form-control" %>
+  			</div>
+			<% end %>
+		<% end %>
+		<p><%= submit_tag "Submit" %></p>
+	<% end %>
+</div>

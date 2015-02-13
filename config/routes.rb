@@ -1,6 +1,12 @@
 Snapsherpa::Application.routes.draw do
   devise_for :users
-  resources :brands
+  resources :brands do
+    get :momentum, on: :collection
+    collection do
+      post :edit_individual
+      put :update_individual
+    end
+  end
 
   root "pages#home"
   get "about" => "pages#about"

@@ -39,6 +39,20 @@ class BrandsController < ApplicationController
     redirect_to brands_url
   end
 
+  def momentum
+    @brands = Brand.all
+  end
+
+  def edit_individual
+    @brands = Brand.find(params[:brand_ids])
+  end
+
+  def update_individual
+    Brand.update(params[:brands].keys, params[:brands].values)
+    flash[:notice] = "Brands updated"
+    redirect_to brands_url
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_brand
