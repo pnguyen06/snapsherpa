@@ -40,11 +40,11 @@ class BrandsController < ApplicationController
   end
 
   def momentum
-    @brands = Brand.all
+    @brands = Brand.all.order('name ASC')
   end
 
   def edit_individual
-    @brands = Brand.find(params[:brand_ids])
+    @brands = Brand.order('name ASC').find(params[:brand_ids])
   end
 
   def update_individual

@@ -1,5 +1,6 @@
 <div class="container">
 	<h1>Editing Momentum</h1>
+	<input type="checkbox" id="selectAll" value="selectAll"> Select / Deselect All<br/><br/>
 	<div style="background-color: #fff;">
 		<%= form_tag edit_individual_brands_path do %>
 	    <div class="table-responsive">
@@ -8,6 +9,7 @@
 	          <tr>
 	            <th style="text-align: left;">Name</th>
 	            <th>Momentum</th>
+	            <th>Edit</th>
 	          </tr>
 	        </thead>
 	        <tbody>
@@ -24,6 +26,9 @@
 	                </div>
 	              </td>
 	              <td>
+	              	<%= brand.momentum %>
+	              </td>
+	              <td>
 	              	<%= check_box_tag "brand_ids[]", brand.id %>
 	              </td>
 							</tr>
@@ -36,3 +41,17 @@
 	</div>
 	<%= link_to 'Back', brands_path %>
 </div>
+
+<script>
+	$('#selectAll').click(function() {
+	   if(this.checked) {
+	       $(':checkbox').each(function() {
+	           this.checked = true;                        
+	       });
+	   } else {
+	      $(':checkbox').each(function() {
+	           this.checked = false;                        
+	       });
+	   } 
+	});
+</script>
