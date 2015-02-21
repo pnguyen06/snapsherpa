@@ -1,25 +1,34 @@
-<nav class="navbar navbar-default" role="navigation">
+<div class="navbar navbar-default">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="sr-only">Toggle navigation</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle Navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to image_tag('logo.png', :size => "20x20") + " Snap Sherpa", root_path, :class => "navbar-brand" %>
+      <%= link_to " Snap Sherpa", root_path, :class => "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Database", brands_path %></li>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right header_link collapse-bg">
+        <li><%= link_to "DATABASE", brands_path %></li>
         <% if user_signed_in? %>
           <!--<li><%= link_to "Account Settings", edit_user_registration_path %></li>-->
-          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+          <li><%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %></li>
         <% end %>
-      </ul>
+      </ul>      
+
+        <div class="form-group" id="the-basics">
+          <%= form_tag brands_path, :method => 'get' do %>
+            <div class="input-group" style="border-left:1px solid #BDBDBD; margin-top: 1px;">
+              <span class="input-group-addon search-input" style="padding-right: 5px; color: #BDBDBD;"><i class="fa fa-search"></i></span>
+              <%= text_field_tag :search, params[:search], :placeholder => "Explore by brand name", :class => "form-control input-lg typeahead search-input", :style => "padding-left: 0px;" %>
+            </div>
+            <div style="position: absolute; top: -9999px;"><%= submit_tag "Search", :name => nil, :class => "btn btn-default btn-xs"  %></div>
+          <% end %>
+        </div>
     </div><!-- /.navbar-collapse -->
   </div>
-</nav>
+</div>

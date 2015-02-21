@@ -20,6 +20,8 @@ This site was hand-crafted by Phil Nguyen.
 GRAPHIC ASSETS
 ============================================================================
 
+*Old*
+
 Backpack (icon)
 Joe Harrison
 http://thenounproject.com/term/backpack/16138/
@@ -27,9 +29,6 @@ http://thenounproject.com/term/backpack/16138/
 Landing and Database Banner
 Death to the Stock Photo
 http://deathtothestockphoto.com/
-
-
-*Old*
 
 Sylwia Bartyzel
 https://unsplash.com/sylwiabartyzel

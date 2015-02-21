@@ -3,6 +3,7 @@
 
 $font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $body-bg: #F5F5F5;
+$border-radius-base: 0px !important;
 
 @import 'bootstrap';
 
@@ -15,6 +16,12 @@ $body-bg: #F5F5F5;
   font-weight: 600;
 }
 
+.navbar {
+  height: 10px !important;
+  background-color: #FFF;
+}
+
+
 .btn {
   border-radius: 50px;
   //background: none;
@@ -24,6 +31,7 @@ $body-bg: #F5F5F5;
 .btn:hover {
   //background-color: #f1f1f1;
 }
+
 
 .panel-footer {
 	background-color: #EEEEEE;
@@ -58,4 +66,10 @@ html, body {
 .footer {
   //background-color: #ecf0f1;
   font-size: 10px;
+}
+
+@media (max-width: 767px) {
+  .collapse-bg {
+    background-color: #FFF;
+  }
 }
