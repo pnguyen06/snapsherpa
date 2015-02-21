@@ -22,7 +22,7 @@
 
         <div class="form-group" id="the-basics">
           <%= form_tag brands_path, :method => 'get' do %>
-            <div class="input-group" style="border-left:1px solid #BDBDBD; margin-top: 1px;">
+            <div class="input-group" style="border-left: 1px solid #BDBDBD; margin-top: 1px;">
               <span class="input-group-addon search-input" style="padding-right: 5px; color: #BDBDBD;"><i class="fa fa-search"></i></span>
               <%= text_field_tag :search, params[:search], :placeholder => "Explore by brand name", :class => "form-control input-lg typeahead search-input", :style => "padding-left: 0px;" %>
             </div>
