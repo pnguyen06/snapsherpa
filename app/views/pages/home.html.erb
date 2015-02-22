@@ -29,17 +29,30 @@
 	</div>
 </div>
 <br /><br />
-<div class="container" style="background-color: #FFF;">
-	<table class="table table-striped">
-    <tbody>
-			<% @news.each do |news| %>
-		    <tr>
-		      <td><%= news.date.strftime("%m/%d/%y") %></td>
-		      <td><%= link_to news.title, news, :class => "link-grey" %></td>
-		    </tr>
-		  <% end %>
-		</tbody>
-	</table>
+<div class="container">
+	<div class="row">
+		<div class="col-md-7 recent_news" style="background-color: #FFF;">
+			<h3>Recent News</h3>
+			<table class="table table-striped">
+		    <tbody>
+					<% @news.each do |news| %>
+				    <tr>
+				      <td><%= news.date.strftime("%b. %e") %></td>
+				      <td>
+				      	<%= link_to news.title, news, :class => "link-grey" %>
+				      	<br />
+				      	<small><%= news.author %> // <%= news.source %></small>
+				      </td>
+				    </tr>
+				  <% end %>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-4 col-md-offset-1" style="background-color: #FFF;">
+			<h3>Trending Brands</h3>
+			To Come
+		</div>
+	</div>
 </div>
 
 <%= javascript_include_tag "matcher" %>
