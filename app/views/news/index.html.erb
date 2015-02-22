@@ -1,0 +1,37 @@
+<div class="container">
+  <button type="button" class="btn btn-default"><%= link_to 'New News', new_news_path %></button>
+
+  <h1>News</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Title</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @news.each do |news| %>
+        <tr>
+          <td><%= news.date.strftime("%m/%d/%y") %></td>
+          <td><%= link_to news.title, news %></td>
+          <td>
+            <%= link_to edit_news_path(news) do %>
+              <span class="fa fa-edit"></span>
+              Edit
+            <% end %>
+          </td>
+          <td>
+            <%= link_to news, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="fa fa-trash-o"></span>
+              Delete
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

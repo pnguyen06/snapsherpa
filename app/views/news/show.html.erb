@@ -1,0 +1,38 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <%= image_tag @news.image.url(:medium) %>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @news.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @news.description %>
+  </p>
+
+  <p>
+    <strong>Url:</strong>
+    <%= @news.url %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= @news.date %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= @news.author %>
+  </p>
+
+  <p>
+    <strong>Source:</strong>
+    <%= @news.source %>
+  </p>
+
+  <%= link_to 'Edit', edit_news_path(@news) %> |
+  <%= link_to 'Back', news_index_path %>
+</div>
