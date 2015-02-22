@@ -1,13 +1,27 @@
 <div class="charts_jumbo" style="margin-bottom: 30px;">
   <div class="container">
     <div class="col-md-8 col-md-offset-2">
-      <h1 class="cabin" style="color: #FFF;">Let's discover.</h1>
+      <h1 class="cabin" style="color: #FFF;">Insights into what brands are doing.</h1>
       <h3 class="cabin" style="color: #00897B;">Connect with your favorite brands to get inside looks, exclusive content, promo codes, teasers, and more</h3>
     </div>
   </div>
 </div>
-<div class="container">
-	<h4 class="cabin" style="letter-spacing: 2px;">DISTRIBUTION OF STORIES BY DAY OF WEEK</h3>
-		<small><i>Trailing 14 Days</i></small>
+<div class="container" style="background-color: #FFF;">
+	<h4 class="cabin" style="letter-spacing: 2px; margin-bottom: -3px;">DISTRIBUTION OF STORIES BY DAY OF WEEK</h3>
+	<small><i>Trailing 14 Days</i></small>
 	<%= image_tag "weekdist.png", :class => "img-responsive" %>
+	This chart demonstrates <b>which days are the most popular</b> for brands to post Stories on Snapchat.
+	<br /><br />
+	The calculation is performed gathering data over the most recent 14 day period and using the formula: (Stories during a specific day of the week) &divide; (total Stories during 14 day period).
+</div>
+<br /><br />
+<div class="container" style="background-color: #FFF;">
+	<h4 class="cabin" style="letter-spacing: 2px; margin-bottom: -3px;">AVERAGE ACTIVITY BY INDUSTRY</h3>
+	<small><i>
+		Trailing 14 Days
+	</i></small>
+	<%= image_tag "industact.png", :class => "img-responsive" %>
+	This chart demonstrates which industries are <b>most active</b> with Stories on Snapchat.
+	<br /><br />
+	The calculation is performed gathering data over the most recent 14 day period and using the formula: (total number of active days by brands per industry) &divide; (total number of active brands by industry).
 </div>
