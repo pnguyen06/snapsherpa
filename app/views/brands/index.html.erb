@@ -59,7 +59,8 @@
   <br />
   <div style="background-color: #fff;">
     <div class="table-responsive">
-      <table class="table table-hover table-condensed sortable-theme-bootstrap" id="brand-table" data-sortable>
+      <table class="table table-hover table-condensed" id="brand-table" data-sortable>
+        <!-- sortable-theme-bootstrap -->
         <b>&nbsp;<%= @brands.count %>
           <% if @brands.count == 1 %>
              Brand
@@ -84,14 +85,18 @@
           <% @brands.each do |brand| %>
             <tr>
               <td>
-                <div class="row">
-                  <div class="col-md-2">
-                    <%= link_to image_tag(brand.image.url(:thumb), :size => "40x40", :class => "img-rounded"), brand %>
-                  </div>
-                  <div class="col-md-10" style="text-align: left;">
-                    <h5><%= link_to brand.name, brand,  :class => "link-grey" %></h5>
-                  </div>
-                </div>
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <%= link_to image_tag(brand.image.url(:thumb), :size => "40x40", :class => "img-rounded"), brand %>
+                      </td>
+                      <td>
+                        <h5><%= link_to brand.name, brand,  :class => "link-grey" %></h5>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table> 
               </td>
               <td><%= brand.username %></td>
               <td><%= brand.momentum %></td>
