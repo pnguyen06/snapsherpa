@@ -31,7 +31,7 @@
 <br /><br />
 <div class="container">
 	<div class="row">
-		<div class="col-md-7 recent_news" style="background-color: #FFF;">
+		<div class="col-md-7 front_tables" style="background-color: #FFF;">
 			<h3>Recent News</h3>
 			<table class="table table-striped">
 		    <tbody>
@@ -48,9 +48,93 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="col-md-4 col-md-offset-1" style="background-color: #FFF;">
+		<div class="col-md-4 col-md-offset-1 front_tables" style="background-color: #FFF;">
 			<h3>Trending Brands</h3>
-			To Come
+			<small><i>Change in Activity from prior week as of Feb 23 (updated weekly)</i></small>
+			<table class="table table-striped" width="100%">
+		    <tbody>
+					<!-- UP -->
+					<tr><td><table><tr>
+								<% if Brand.exists?(7) %>
+									<td style="white-space: nowrap;">
+										<%= link_to image_tag(@brands[7].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[7] %>
+									</td>
+									<td style="white-space: nowrap; padding-left: 5px;">
+										<%= link_to @brands[7].name, @brands[7], :class => "link-grey" %>
+									</td>
+									<td style="text-align: right;" width="99%">
+										<span class="fa fa-arrow-up" style="color: #4DB6AC"></span>6
+									</td>
+								<% end %>
+					</tr></table></td></tr>
+					<tr><td><table><tr>
+								<% if Brand.exists?(7) %>
+									<td style="white-space: nowrap;">
+										<%= link_to image_tag(@brands[68].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[68] %>
+									</td>
+									<td style="white-space: nowrap; padding-left: 5px;">
+										<%= link_to @brands[68].name, @brands[68], :class => "link-grey" %>
+									</td>
+									<td style="text-align: right;" width="99%">
+										<span class="fa fa-arrow-up" style="color: #4DB6AC"></span>5
+									</td>
+								<% end %>
+					</tr></table></td></tr>
+					<tr><td><table><tr>
+								<% if Brand.exists?(7) %>
+									<td style="white-space: nowrap;">
+										<%= link_to image_tag(@brands[17].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[17] %>
+									</td>
+									<td style="white-space: nowrap; padding-left: 5px;">
+										<%= link_to @brands[17].name, @brands[17], :class => "link-grey" %>
+									</td>
+									<td style="text-align: right;" width="99%">
+										<span class="fa fa-arrow-up" style="color: #4DB6AC"></span>4
+									</td>
+								<% end %>
+					</tr></table></td></tr>
+					<!-- DOWN -->
+					<tr><td><table><tr>
+								<% if Brand.exists?(7) %>
+									<td style="white-space: nowrap;">
+										<%= link_to image_tag(@brands[22].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[22] %>
+									</td>
+									<td style="white-space: nowrap; padding-left: 5px;">
+										<%= link_to @brands[22].name, @brands[22], :class => "link-grey" %>
+									</td>
+									<td style="text-align: right;" width="99%">
+										<span class="fa fa-arrow-down" style="color: #ed4c89"></span>4
+									</td>
+								<% end %>
+					</tr></table></td></tr>
+					<tr><td><table><tr>
+								<% if Brand.exists?(7) %>
+									<td style="white-space: nowrap;">
+										<%= link_to image_tag(@brands[39].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[39] %>
+									</td>
+									<td style="white-space: nowrap; padding-left: 5px;">
+										<%= link_to @brands[39].name, @brands[39], :class => "link-grey" %>
+									</td>
+									<td style="text-align: right;" width="99%">
+										<span class="fa fa-arrow-down" style="color: #ed4c89"></span>4
+									</td>
+								<% end %>
+					</tr></table></td></tr>
+					<tr><td><table><tr>
+									<% if Brand.exists?(7) %>
+										<td style="white-space: nowrap;">
+											<%= link_to image_tag(@brands[83].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[83] %>
+										</td>
+										<td style="white-space: nowrap; padding-left: 5px;">
+											<%= link_to @brands[83].name, @brands[83], :class => "link-grey" %>
+										</td>
+										<td style="text-align: right;" width="99%">
+											<span class="fa fa-arrow-down" style="color: #ed4c89"></span>4
+										</td>
+									<% end %>
+					</tr></table></td></tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
