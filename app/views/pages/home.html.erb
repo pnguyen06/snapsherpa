@@ -48,93 +48,120 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="col-md-4 col-md-offset-1 front_tables" style="background-color: #FFF;">
-			<h3>Trending Brands</h3>
-			<small><i>Change in Activity from prior week as of Feb 23 (updated weekly)</i></small>
-			<table class="table table-striped" width="100%">
-		    <tbody>
-					<!-- UP -->
-					<tr><td><table><tr>
-								<% if Brand.exists?(7) %>
-									<td style="white-space: nowrap;">
-										<%= link_to image_tag(@brands[6].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[6] %>
-									</td>
-									<td style="white-space: nowrap; padding-left: 5px;">
-										<%= link_to @brands[6].name, @brands[6], :class => "link-grey" %>
-									</td>
-									<td style="text-align: right;" width="99%">
-										<span class="fa fa-arrow-up" style="color: #4DB6AC"></span>6
-									</td>
-								<% end %>
-					</tr></table></td></tr>
-					<tr><td><table><tr>
-								<% if Brand.exists?(7) %>
-									<td style="white-space: nowrap;">
-										<%= link_to image_tag(@brands[67].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[67] %>
-									</td>
-									<td style="white-space: nowrap; padding-left: 5px;">
-										<%= link_to @brands[67].name, @brands[67], :class => "link-grey" %>
-									</td>
-									<td style="text-align: right;" width="99%">
-										<span class="fa fa-arrow-up" style="color: #4DB6AC"></span>5
-									</td>
-								<% end %>
-					</tr></table></td></tr>
-					<tr><td><table><tr>
-								<% if Brand.exists?(7) %>
-									<td style="white-space: nowrap;">
-										<%= link_to image_tag(@brands[16].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[16] %>
-									</td>
-									<td style="white-space: nowrap; padding-left: 5px;">
-										<%= link_to @brands[16].name, @brands[16], :class => "link-grey" %>
-									</td>
-									<td style="text-align: right;" width="99%">
-										<span class="fa fa-arrow-up" style="color: #4DB6AC"></span>4
-									</td>
-								<% end %>
-					</tr></table></td></tr>
-					<!-- DOWN -->
-					<tr><td><table><tr>
-								<% if Brand.exists?(7) %>
-									<td style="white-space: nowrap;">
-										<%= link_to image_tag(@brands[21].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[21] %>
-									</td>
-									<td style="white-space: nowrap; padding-left: 5px;">
-										<%= link_to @brands[21].name, @brands[21], :class => "link-grey" %>
-									</td>
-									<td style="text-align: right;" width="99%">
-										<span class="fa fa-arrow-down" style="color: #ed4c89"></span>4
-									</td>
-								<% end %>
-					</tr></table></td></tr>
-					<tr><td><table><tr>
-								<% if Brand.exists?(7) %>
-									<td style="white-space: nowrap;">
-										<%= link_to image_tag(@brands[38].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[38] %>
-									</td>
-									<td style="white-space: nowrap; padding-left: 5px;">
-										<%= link_to @brands[38].name, @brands[38], :class => "link-grey" %>
-									</td>
-									<td style="text-align: right;" width="99%">
-										<span class="fa fa-arrow-down" style="color: #ed4c89"></span>4
-									</td>
-								<% end %>
-					</tr></table></td></tr>
-					<tr><td><table><tr>
-									<% if Brand.exists?(7) %>
+		<div class="col-md-4 col-md-offset-1">
+			<div class="row">
+				<div class="col-md-12 front_tables" style="background-color: #FFF;">
+					<h3>Trending Brands</h3>
+					<small><i>Change in Activity from prior week as of Feb 23 (updated weekly)</i></small>
+					<table class="table table-striped" width="100%">
+				    <tbody>
+							<!-- UP -->
+							<tr><td><table><tr>
+										<% if Brand.exists?(7) %>
+											<td style="white-space: nowrap;">
+												<%= link_to image_tag(@brands[6].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[6] %>
+											</td>
+											<td style="white-space: nowrap; padding-left: 5px;">
+												<%= link_to @brands[6].name, @brands[6], :class => "link-grey" %>
+											</td>
+											<td style="text-align: right;" width="99%">
+												<span class="fa fa-arrow-up" style="color: #4DB6AC"></span>6
+											</td>
+										<% end %>
+							</tr></table></td></tr>
+							<tr><td><table><tr>
+										<% if Brand.exists?(7) %>
+											<td style="white-space: nowrap;">
+												<%= link_to image_tag(@brands[67].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[67] %>
+											</td>
+											<td style="white-space: nowrap; padding-left: 5px;">
+												<%= link_to @brands[67].name, @brands[67], :class => "link-grey" %>
+											</td>
+											<td style="text-align: right;" width="99%">
+												<span class="fa fa-arrow-up" style="color: #4DB6AC"></span>5
+											</td>
+										<% end %>
+							</tr></table></td></tr>
+							<tr><td><table><tr>
+										<% if Brand.exists?(7) %>
+											<td style="white-space: nowrap;">
+												<%= link_to image_tag(@brands[16].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[16] %>
+											</td>
+											<td style="white-space: nowrap; padding-left: 5px;">
+												<%= link_to @brands[16].name, @brands[16], :class => "link-grey" %>
+											</td>
+											<td style="text-align: right;" width="99%">
+												<span class="fa fa-arrow-up" style="color: #4DB6AC"></span>4
+											</td>
+										<% end %>
+							</tr></table></td></tr>
+							<!-- DOWN -->
+							<tr><td><table><tr>
+										<% if Brand.exists?(7) %>
+											<td style="white-space: nowrap;">
+												<%= link_to image_tag(@brands[21].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[21] %>
+											</td>
+											<td style="white-space: nowrap; padding-left: 5px;">
+												<%= link_to @brands[21].name, @brands[21], :class => "link-grey" %>
+											</td>
+											<td style="text-align: right;" width="99%">
+												<span class="fa fa-arrow-down" style="color: #ed4c89"></span>4
+											</td>
+										<% end %>
+							</tr></table></td></tr>
+							<tr><td><table><tr>
+										<% if Brand.exists?(7) %>
+											<td style="white-space: nowrap;">
+												<%= link_to image_tag(@brands[38].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[38] %>
+											</td>
+											<td style="white-space: nowrap; padding-left: 5px;">
+												<%= link_to @brands[38].name, @brands[38], :class => "link-grey" %>
+											</td>
+											<td style="text-align: right;" width="99%">
+												<span class="fa fa-arrow-down" style="color: #ed4c89"></span>4
+											</td>
+										<% end %>
+							</tr></table></td></tr>
+							<tr><td><table><tr>
+											<% if Brand.exists?(7) %>
+												<td style="white-space: nowrap;">
+													<%= link_to image_tag(@brands[82].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[82] %>
+												</td>
+												<td style="white-space: nowrap; padding-left: 5px;">
+													<%= link_to @brands[82].name, @brands[82], :class => "link-grey" %>
+												</td>
+												<td style="text-align: right;" width="99%">
+													<span class="fa fa-arrow-down" style="color: #ed4c89"></span>4
+												</td>
+											<% end %>
+							</tr></table></td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-12" style="background-color: #FFF;">
+					<h3>Recently Added</h3>
+						<table class="table table-striped" width="100%">
+					    <tbody>
+								<% @recent.each do |recent| %>
+									<tr><td><table><tr>
 										<td style="white-space: nowrap;">
-											<%= link_to image_tag(@brands[82].image.url(:thumb), :size => "20x20", :class => "img-rounded"), @brands[82] %>
+											<%= link_to image_tag(recent.image.url(:thumb), :size => "20x20", :class => "img-rounded"), recent %>
 										</td>
 										<td style="white-space: nowrap; padding-left: 5px;">
-											<%= link_to @brands[82].name, @brands[82], :class => "link-grey" %>
+											<%= link_to recent.name, recent, :class => "link-grey" %>
 										</td>
 										<td style="text-align: right;" width="99%">
-											<span class="fa fa-arrow-down" style="color: #ed4c89"></span>4
+											<%= recent.created_at.strftime("%b. %e") %>
 										</td>
-									<% end %>
-					</tr></table></td></tr>
-				</tbody>
-			</table>
+									</tr></table></td></tr>
+								<% end %>
+							</tbody>
+						</table>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
