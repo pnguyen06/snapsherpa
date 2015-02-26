@@ -79,6 +79,7 @@
             <th data-sortable="false">Previews</th>
             <th>Industry</th>
             <th data-sortable="false">Web Presence</th>
+            <th>Date Added</th>
           </tr>
         </thead>
         <tbody>
@@ -124,6 +125,9 @@
                     <i class="fa fa-instagram fa-lg fa-fw link-grey"></i>
                   <% end %>
                 <% end %>
+              </td>
+              <td>
+                <%= brand.created_at.strftime("%b. %e") %>
               </td>
             </tr>
           <% end %>
