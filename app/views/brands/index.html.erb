@@ -61,6 +61,10 @@
     <div class="table-responsive">
       <table class="table table-hover table-condensed" id="brand-table" data-sortable>
         <!-- sortable-theme-bootstrap -->
+        <colgroup>
+          <col span="2">
+          <col style="background-color: #F3E5F5;">
+        </colgroup>
         <b>&nbsp;<%= @brands.count %>
           <% if @brands.count == 1 %>
              Brand
@@ -74,7 +78,7 @@
           <tr>
             <th style="text-align: left;">Name</th>
             <th>Username</th>
-            <th>Activity*</th>
+            <th style="text-align: center;">Activity*</th>
             <th data-sortable="false">Deals</th>
             <th data-sortable="false">Previews</th>
             <th>Industry</th>
@@ -100,34 +104,34 @@
                 </table> 
               </td>
               <td><%= brand.username %></td>
-              <td><%= brand.momentum %></td>
+              <td style="text-align: center;"><%= brand.momentum %></td>
               <td><% if brand.deals? %><span class="fa fa-check-circle"></span><% end %></td>
               <td><% if brand.previews? %><span class="fa fa-check-circle"></span><% end %></td>
-              <td><%= brand.industry %></td>
+              <td><small><%= brand.industry %></small></td>
               <td>
                 <% if brand.website.present? %>
                   <%= link_to "http://#{brand.website}" do %>
-                    <i class="fa fa-link fa-lg fa-fw link-grey"></i>
+                    <i class="fa fa-link fa-fw link-grey"></i>
                   <% end %>
                 <% end %>
                 <% if brand.facebook.present? %>
                   <%= link_to "http://#{brand.facebook}" do %>
-                    <i class="fa fa-facebook fa-lg fa-fw link-grey"></i>
+                    <i class="fa fa-facebook fa-fw link-grey"></i>
                   <% end %>
                 <% end %>
                 <% if brand.twitter.present? %>
                   <%= link_to "http://#{brand.twitter}" do %>
-                    <i class="fa fa-twitter fa-lg fa-fw link-grey"></i>
+                    <i class="fa fa-twitter fa-fw link-grey"></i>
                   <% end %>
                 <% end %>
                 <% if brand.instagram.present? %>
                   <%= link_to "http://#{brand.instagram}" do %>
-                    <i class="fa fa-instagram fa-lg fa-fw link-grey"></i>
+                    <i class="fa fa-instagram fa-fw link-grey"></i>
                   <% end %>
                 <% end %>
               </td>
               <td>
-                <%= brand.created_at.strftime("%b. %e") %>
+                <small><%= brand.created_at.strftime("%b. %e") %></small>
               </td>
             </tr>
           <% end %>
